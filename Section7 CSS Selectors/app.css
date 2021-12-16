@@ -24,8 +24,33 @@ span {
     color: #81b29a;
 }
 
+.post a {
+    color: #81b29a;
+}
+
 .subreddit {
     background-color: #e07a5f;
     color: #f4f1de;
     font-size: 16px;
+}
+
+footer a {
+    font-size: 14px;
+    color: #e07a5f;
+}
+
+/* input + button {
+    background-color: aquamarine;
+} */
+
+h2 + button {
+    font-size: 20px;
+}
+
+footer > a {
+    font-weight: bold;
+}
+
+input[type="password"] {
+    color: red;
 }
