@@ -1,0 +1,31 @@
+/* * {
+    color: orange;
+    background-color: cyan;
+} */
+
+body {
+    background-color: #f4f1de;
+}
+
+button {
+    background-color: #f2cc8f;
+}
+
+h2, h1 {
+    color: #3d405b;
+}
+
+#signup {
+    color: #e07a5f;
+    background-color: #3d405b;
+}
+
+span {
+    color: #81b29a;
+}
+
+.subreddit {
+    background-color: #e07a5f;
+    color: #f4f1de;
+    font-size: 16px;
+}
