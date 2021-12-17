@@ -4,7 +4,7 @@
 } */
 
 body {
-    background-color: #f4f1de;
+    background-color: #fff;
 }
 
 button {
@@ -26,6 +26,8 @@ span {
 
 .post a {
     color: #81b29a;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .subreddit {
@@ -54,3 +56,66 @@ footer > a {
 input[type="password"] {
     color: red;
 }
+
+a:hover, button:hover {
+    color: #f4f1de;
+    background-color: #e07a5f;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+.post button:active {
+    background-color: #81b29a;
+}
+
+.post:nth-of-type(2n) {
+    background-color: #ddd;
+}
+
+h2::first-letter {
+    font-size: 30px;
+}
+
+p::first-line {
+    color: magenta;
+}
+
+p::selection {
+    background-color: black;
+    color: white;
+}
+
+/* ::selection {
+    background-color: black;
+    color: white;
+} */
+
+/* Add an arrow after links */
+a::after {
+    content: "→";
+}
+
+/* Add a > before links */
+a::before {
+    content: ">";
+}
+
+.post button:hover {
+    background-color: #81b29a;
+}
+
+/* ^above is more specific than below, so */
+/* for changing the background color, the */
+/* above color "wins", but the font-size */
+/* still changes as font-size is not changed */
+/* above */
+
+button:hover {
+    background-color: olive;
+}
+
+/* button {
+    background-color: magenta !important;
+} */
