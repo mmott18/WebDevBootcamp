@@ -1,0 +1,66 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    background-color: #1d3557;
+    width: 90%;
+    height: 750px;
+    margin: 0 auto;
+    border: 5px solid #1d3557;
+
+
+    display: flex;
+    /* flex-direction: row-reverse; */
+    /* above changes flex direction to right to left */
+
+    /* flex-direction: column; */
+    /* above changes direction to top to bottom */
+
+    /* justify-content: flex-end; */
+    /* above moves content to the left of the container */
+    /* b/c main axis goes right to left */
+
+    /* justify-content: center; */
+    /* above centers content along main axis */
+
+    /* justify-content: space-between; */
+    /* above takes all extra space and distrubtes between */
+    /* all elements but not on outside edges*/
+
+    /* space-around gives each element the same */
+    /* amount of space around it */
+
+
+    /* flex-wrap: wrap; */
+    /* above wraps elements in container */
+    /* along main axis */
+    /* wrap-reverse reverses the direction */
+    /* of the cross axis */
+
+
+    /* align-items: flex-end; */
+    /* above aligns elements along bottom of container */
+    /* b/c the cross axis starts at top and ends at bottom */
+
+
+    /* align-items: baseline; */
+    /* above aligns elements so that bottom */
+    /* of each letter within the element will */
+    /* be in line */
+
+    align-items: flex-end;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+#container div {
+   width: 250px;
+   height: 250px; 
+   font-size: 4em;
+   text-align: center;
+}
