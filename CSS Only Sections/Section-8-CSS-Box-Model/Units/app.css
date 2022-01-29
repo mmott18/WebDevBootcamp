@@ -1,0 +1,72 @@
+html {
+    font-size: 30px;
+}
+
+section {
+    background-color: #ca6702;
+    width: 800px;
+    height: 800px;
+}
+
+div {
+    background-color: #ee9b00;
+    /* 50% of parent's height and width */
+    width: 50%;
+    height: 50%;
+}
+
+h1 {
+    font-size: 40px;
+    border: 1px solid black;
+    /* 200% of 40px = 80px */
+    line-height: 200%;
+}
+
+#ems h2 {
+    font-size: 2em;
+    /* current font-size is 32px as it is */
+    /* twice the value of the parent */
+    /* therefore, margin-left will have */
+    /* a value of 32px */
+    margin-left: 1em;
+}
+
+#ems h3 {
+    font-size: 1.5em;
+}
+
+#ems p {
+    font-size: 1em;
+}
+
+#ems {
+    font-size: 16px;
+}
+
+button {
+    font-size: 1em;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    color: #e9d8a6;
+    background-color: #005f73;
+}
+
+#ems ul {
+    font-size: 1.5em;
+}
+
+#rems h2 {
+    font-size: 3rem;
+}
+
+#rems h3 {
+    font-size: 2rem;
+}
+
+#rems ul {
+    font-size: 0.8rem;
+}
+
+#rems button {
+    font-size: 1.5rem;
+}
