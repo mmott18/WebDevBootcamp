@@ -1,41 +1,59 @@
 const score = document.querySelector('#score');
-const buttonContainer = document.querySelector('#buttonContainer');
 const incPlayer1 = document.querySelector('#incPlayerOne');
 const incPlayer2 = document.querySelector('#incPlayerTwo');
-const playTo = document.querySelector('#playTo option:checked');
+const reset = document.querySelector('#reset');
+const playTo = document.querySelector('#playTo');
 const p1Display = document.querySelector('#p1');
 const p2Display = document.querySelector('#p2');
 
 let p1Score = 0;
 let p2Score = 0;
-let playToScore = parseInt(playTo.value);
 let isGameOver = false;
+let playToScore = parseInt(playTo.value);
 
-buttonContainer.addEventListener('click', (e) => {
+function resetGame() {
+	p1Score = 0;
+	p2Score = 0;
+	p1Display.innerText = p1Score;
+	p2Display.innerText = p2Score;
+	incPlayer1.disabled = false;
+	incPlayer2.disabled = false;
+	isGameOver = false;
+	p1Display.className = '';
+	p2Display.className = '';
+}
+
+playTo.addEventListener('change', () => {
+	playToScore = parseInt(playTo.value);
+	resetGame();
+});
+
+incPlayer1.addEventListener('click', () => {
 	if (!isGameOver) {
-		if (e.target.nodeName === 'BUTTON') {
-			if (e.target.id === 'incPlayerOne') {
-				p1Score++;
-				score.innerText = `${p1Score} to ${p2Score}`;
-			} else if (e.target.id === 'incPlayerTwo') {
-				p2Score++;
-				score.innerText = `${p1Score} to ${p2Score}`;
-			} else if (e.target.id === 'reset') {
-				p1Score = 0;
-				p2Score = 0;
-				score.innerText = `${p1Score} to ${p2Score}`;
-			}
-		}
+		p1Score++;
 		if (p1Score === playToScore) {
 			isGameOver = true;
-			p1Display.style.color = 'green';
-			p1Display.style.backgroundColor = 'green';
-		} else if (p2Score === playToScore) {
-			isGameOver = true;
-			alert('Player 2 Wins!');
+			incPlayer1.disabled = true;
+			incPlayer2.disabled = true;
+			p1Display.classList.add('winner');
+			p2Display.classList.add('loser');
 		}
-	} else {
-		incPlayer1.disabled = true;
-		incPlayer2.disabled = true;
+		p1Display.innerText = p1Score;
 	}
 });
+
+incPlayer2.addEventListener('click', () => {
+	if (!isGameOver) {
+		p2Score++;
+		if (p2Score === playToScore) {
+			isGameOver = true;
+			incPlayer1.disabled = true;
+			incPlayer2.disabled = true;
+			p2Display.classList.toggle('winner');
+			p1Display.classList.toggle('loser');
+		}
+		p2Display.innerText = p2Score;
+	}
+});
+
+reset.addEventListener('click', resetGame);

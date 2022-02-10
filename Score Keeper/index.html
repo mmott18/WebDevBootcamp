@@ -7,13 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
     <title>Score Keeper</title>
+
+    <style>
+        .winner {
+            color: green;
+        }
+
+        .loser {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <img id="pingPong"
         src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
     <h1>Ping Pong Score Keeper</h1>
-    <h2 id="score"><span id="p1">0</span> to <span id="p2">0</span></h2>
+    <h2 id="score"> <span id="p1">0</span> to <span id="p2">0</span> </h2>
     <p>Use the buttons below to keep score.</p>
 
     <label for="playTo">Playing To</label>
@@ -25,11 +35,9 @@
     </select>
     <br>
 
-    <section id="buttonContainer">
-        <button id="incPlayerOne">+1 Player One</button>
-        <button id="incPlayerTwo">+1 Player Two</button>
-        <button id="reset">Reset</button>
-    </section>
+    <button id="incPlayerOne">+1 Player One</button>
+    <button id="incPlayerTwo">+1 Player Two</button>
+    <button id="reset">Reset</button>
 
     <script src="app.js"></script>
 </body>
