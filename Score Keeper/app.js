@@ -35,8 +35,8 @@ incPlayer1.addEventListener('click', () => {
 			isGameOver = true;
 			incPlayer1.disabled = true;
 			incPlayer2.disabled = true;
-			p1Display.classList.add('winner');
-			p2Display.classList.add('loser');
+			p1Display.classList.add('has-text-success');
+			p2Display.classList.add('has-text-danger');
 		}
 		p1Display.innerText = p1Score;
 	}
@@ -49,8 +49,8 @@ incPlayer2.addEventListener('click', () => {
 			isGameOver = true;
 			incPlayer1.disabled = true;
 			incPlayer2.disabled = true;
-			p2Display.classList.toggle('winner');
-			p1Display.classList.toggle('loser');
+			p2Display.classList.add('has-text-success');
+			p1Display.classList.add('has-text-danger');
 		}
 		p2Display.innerText = p2Score;
 	}
