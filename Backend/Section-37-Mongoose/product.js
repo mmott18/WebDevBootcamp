@@ -62,6 +62,10 @@ productSchema.methods.addCategory = async function(newCat) {
 	return this.save();
 };
 
+productSchema.statics.fireSale = async function() {
+	return this.updateMany({}, { isOnSale: true, price: 0 });
+};
+
 const Product = mongoose.model('Product', productSchema);
 
 const findProduct = async () => {
@@ -73,23 +77,25 @@ const findProduct = async () => {
 	console.log(foundProduct);
 };
 
-findProduct();
+Product.fireSale().then((res) => console.log(res));
 
-const bike = new Product({
-	name: 'Recreational Bike',
-	price: 399.99,
-	isOnSale: true,
-	categories: [ 'Cycling' ],
-	size: 'M'
-});
-bike
-	.save()
-	.then((data) => {
-		console.log(`Success: ${data}`);
-	})
-	.catch((err) => {
-		console.log(`Failed: ${err}`);
-	});
+// findProduct();
+
+// const bike = new Product({
+// 	name: 'Recreational Bike',
+// 	price: 399.99,
+// 	isOnSale: true,
+// 	categories: [ 'Cycling' ],
+// 	size: 'M'
+// });
+// bike
+// 	.save()
+// 	.then((data) => {
+// 		console.log(`Success: ${data}`);
+// 	})
+// 	.catch((err) => {
+// 		console.log(`Failed: ${err}`);
+// 	});
 
 // Product.findOneAndUpdate({ name: 'Tire Pump ' }, { price: -10.99 }, { new: true, runValidators: true })
 // 	.then((data) => {
